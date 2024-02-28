@@ -1,0 +1,595 @@
+@import "colors";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: $bodyBackgroundColor;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+//general styles
+.primaryButton {
+  background-color: $primaryButtonColor;
+  color: #fff;
+  border-radius: 7px;
+  font-size: 18px;
+  padding: 3px;
+  width: 60%;
+  outline: none;
+  border: 1px solid $primaryButtonColor;
+  cursor: pointer;
+}
+
+.selectBox {
+  font-size: 15px;
+  background: none;
+  outline: none;
+  border: none;
+  color: $secondaryTextColor;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+// navbar
+nav {
+  background-color: $navbarBackground;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  height: 50px;
+  width: 100%;
+
+  .searchBar {
+    width: 15%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    border-radius: 5px;
+  }
+
+  input {
+    width: 90%;
+    padding: 5px;
+    outline: none;
+    border: none;
+  }
+
+  .menu {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+// header info
+.info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: $secondaryTextColor;
+
+  svg {
+    font-size: 22px;
+  }
+}
+
+// main content section
+.mainSection {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  h1 {
+    font-size: 50px;
+    color: $primaryTextColor;
+  }
+
+  .infoSection {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1.5px solid rgba(128, 128, 128, 0.577);
+    border-bottom: 1.5px solid rgba(128, 128, 128, 0.577);
+    padding: 10px;
+  }
+
+  .infoSection > div {
+    display: flex;
+    gap: 20px;
+  }
+
+  .infoSection select {
+    @extend .selectBox;
+  }
+
+  .optionsMenu {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .optionsMenu > a {
+    color: $secondaryTextColor;
+  }
+
+  .navigationBreadCrumb {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .navigationBreadCrumb a,
+  .navigationBreadCrumb > svg {
+    color: $secondaryTextColor;
+  }
+
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .products {
+    display: flex;
+    justify-content: center;
+  }
+
+  .createAccount {
+    display: flex;
+    justify-content: space-between;
+
+    > p {
+      width: 50%;
+      font-size: 30px;
+      color: $primaryTextColor;
+    }
+
+    > div {
+      width: 50%;
+      display: flex;
+    }
+
+    input {
+      border: none;
+      outline: none;
+      width: 70%;
+      background-color: #f9f9f9;
+      height: 40px;
+      font-size: 18px;
+      padding: 3px;
+      border-radius: 5px;
+    }
+
+    button {
+      height: 40px;
+      font-size: 13px;
+      padding: 10px;
+      background-color: $primaryButtonColor;
+      color: #fff;
+      width: max-content;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+      border: 1px solid $primaryButtonColor;
+    }
+  }
+}
+
+// service card
+.serviceCard {
+  width: 100%;
+
+  .label {
+    width: max-content;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background-color: $labelBackground;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+
+  .cardContent {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+  }
+
+  .index {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #000;
+    padding: 3.2px;
+    margin-top: 10px;
+    color: $secondaryTextColor;
+    background-color: #fff;
+  }
+
+  .productImage {
+    width: 20%;
+    align-self: center;
+  }
+
+  .productImage > img {
+    width: 100%;
+  }
+
+  .cardBody {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    h4 {
+      color: $primaryTextColor;
+      display: inline;
+    }
+
+    p {
+      font-size: 15px;
+      margin-top: 3px;
+      color: $secondaryTextColor;
+      display: inline;
+    }
+
+    button {
+      background: none;
+      color: rgb(91, 91, 215);
+      border: none;
+      outline: none;
+      font-size: 14px;
+      align-self: flex-start;
+    }
+
+    .highlight > p {
+      margin-left: 10px;
+      display: block;
+    }
+
+    .extraHighlight {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      border-radius: 10px;
+
+      .extraRatingInfo,
+      .features {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .extraRatingInfo {
+        background-color: $extraHighlightBackground;
+      }
+
+      span {
+        background-color: #fff;
+        color: #1b88f4;
+        padding: 4px 5px;
+        border-radius: 3px;
+        font-size: 17px;
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      p {
+        color: $secondaryTextColor;
+      }
+
+      .features > div {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        font-size: 20px;
+      }
+
+      .features svg {
+        fill: skyblue;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .rating {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    div {
+      background-color: #f3f9ff;
+      color: #074786;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      width: 60%;
+      border-radius: 6px;
+      padding: 3px;
+
+      p {
+        font-size: 19px;
+      }
+    }
+
+    button {
+      @extend .primaryButton;
+    }
+  }
+}
+
+// product card
+.productCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  width: 33%;
+  gap: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+
+  img {
+    width: 70%;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .offerLabel {
+    background-color: $offerLabelBackground;
+    color: $offerLabelTextColor;
+    padding: 3px 5px;
+    border-radius: 5px;
+  }
+
+  .productLabels {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .productInfo {
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+      text-align: center;
+    }
+  }
+
+  .productPricing {
+    display: flex;
+    gap: 10px;
+
+    > div {
+      align-self: flex-end;
+    }
+
+    .offerPrice {
+      font-size: 20px;
+      color: $primaryTextColor;
+    }
+
+    .originalPrice {
+      font-size: 16px;
+      color: $secondaryTextColor;
+    }
+
+    .discount {
+      font-size: 13px;
+      color: red;
+      padding: 4px;
+    }
+  }
+
+  button {
+    @extend .primaryButton;
+    width: 100%;
+    font-size: 22px;
+  }
+}
+
+// footer
+footer {
+  background-color: $footerBackground;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    color: #fff;
+  }
+
+  div a {
+    color: #fff;
+  }
+
+  div select {
+    @extend .selectBox;
+    color: #fff;
+  }
+
+  div select option {
+    background-color: gray;
+  }
+}
+
+$small: 300px;
+$medium: 900px;
+// media queries
+@media screen and (min-width: $small) and (max-width: $medium) {
+  nav {
+    .searchBar {
+      width: 12%;
+      cursor: pointer;
+      transition: width 0.6s linear;
+    }
+
+    .searchBar input {
+      width: 0%;
+      align-self: center;
+    }
+
+    .searchBar svg {
+      font-size: 20px;
+      margin-left: 10px;
+    }
+
+    .menu {
+      width: 100%;
+    }
+
+    .menu a {
+      font-size: 14.5px;
+    }
+
+    .mobile-search {
+      width: 100%;
+    }
+
+    .mobile-search input {
+      width: 90%;
+    }
+
+    .menu-hidden {
+      display: none;
+    }
+  }
+
+  .mainSection {
+    width: 90%;
+
+    h1 {
+      font-size: 24px;
+    }
+
+    .optionsMenu {
+      width: 100%;
+
+      a,
+      svg {
+        width: max-content;
+      }
+    }
+
+    .products {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .rating {
+      display: none;
+    }
+
+    .cardBody {
+      width: 100%;
+    }
+
+    .createAccount {
+      > p {
+        font-size: 20px;
+      }
+    }
+
+    .navigationBreadCrumb {
+      a,
+      svg {
+        width: max-content;
+      }
+      font-size: 12px;
+    }
+
+    .infoSection {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+
+      .info {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        width: 50%;
+      }
+
+      .info-elem-sec {
+        width: 66%;
+      }
+      .info-select-sec {
+        width: 33%;
+      }
+    }
+  }
+
+  .productCard {
+    width: 70%;
+
+    img {
+      width: 90%;
+    }
+  }
+
+  .serviceCard {
+    .productImage {
+      width: 70%;
+    }
+
+    .cardContent {
+      flex-direction: column;
+    }
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 20px;
+
+    select {
+      width: max-content;
+    }
+  }
+}
